@@ -70,6 +70,7 @@ config :playground, PlaygroundWeb.Endpoint,
 # If desired, both `http:` and `https:` keys can be
 # configured to run both http and https servers on
 config :playground, PlaygroundWeb.Endpoint,
+  url: [scheme: "https", host: "phoenix-playground.test", port: 443],
   live_reload: [
     patterns: [
       ~r"priv/static/(?!uploads/).*(js|css|png|jpeg|jpg|gif|svg|webp|avif|ico)$",
