@@ -155,7 +155,7 @@ defmodule PlaygroundWeb.CoreComponents do
         id="client-error"
         kind={:error}
         title={gettext("We can't find the internet")}
-        phx-disconnected={show(".phx-client-error #client-error")}
+        phx-disconnected={delayed_show(".phx-client-error #client-error")}
         phx-connected={hide("#client-error")}
         hidden
       >
@@ -607,6 +607,19 @@ defmodule PlaygroundWeb.CoreComponents do
       time: 300,
       transition:
         {"transition-all transform ease-out duration-300",
+         "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95",
+         "opacity-100 translate-y-0 sm:scale-100"}
+    )
+  end
+
+  # Workaround for "We can't find the internet" flashes on Firefox
+  # https://github.com/phoenixframework/phoenix/issues/5102#issuecomment-1970738490
+  def delayed_show(js \\ %JS{}, selector) do
+    JS.show(js,
+      to: selector,
+      time: 1300,
+      transition:
+        {"delay-1000 transition-all transform ease-out duration-300",
          "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95",
          "opacity-100 translate-y-0 sm:scale-100"}
     )
