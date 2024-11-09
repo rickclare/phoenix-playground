@@ -1,0 +1,3 @@
+[env]
+PLUG_EDITOR = "zed://file/__FILE__:__LINE__"
+DATABASE_PORT = "5433"

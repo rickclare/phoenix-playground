@@ -1,0 +1,15 @@
+# The directory Mix will write compiled artifacts to.
+/_build/
+
+# The directory Mix downloads your dependencies sources to.
+/deps/
+/local_deps/
+
+# Ignore assets that are produced by build tools.
+/priv/static/assets/
+
+# Ignore vendored assets
+/assets/vendor/
+
+# Jest coverage
+/assets/coverage

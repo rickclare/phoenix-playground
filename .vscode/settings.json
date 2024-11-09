@@ -1,0 +1,7 @@
+{
+  "eslint.useFlatConfig": true,
+  "cSpell.words": [
+    "heex"
+  ],
+  "tailwindCSS.experimental.configFile": "assets/tailwind.config.js"
+}

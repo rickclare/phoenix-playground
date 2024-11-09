@@ -1,0 +1,15 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "components/buttons";
+
+@layer base {
+  :root {
+    --theme-primary-lch: 67.46% 0.1414 261.344; /* CornflowerBlue */
+    --theme-secondary-lch: 67.79% 0.1382 0.68; /* PaleVioletRed */
+  }
+}
+
+body {
+  font-synthesis: none;
+}

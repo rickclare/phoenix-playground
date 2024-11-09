@@ -1,0 +1,8 @@
+# Ripgrep specfic ignore file
+
+# see https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#automatic-filtering
+
+#assets/vendor/heroicons/
+
+*.svg
+mix.lock

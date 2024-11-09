@@ -1,0 +1,24 @@
+# Ripgrep and FD .ignore file
+
+# see https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#automatic-filtering
+
+# and https://github.com/sharkdp/fd#excluding-specific-files-or-directories
+
+!/.github/
+!/.devcontainer/
+!/lefthook*.yml
+!/.credo.exs
+!/.devcontainer
+!/.dialyzer*.exs
+!/.doctor.exs
+!/.editorconfig
+!/.envrc*
+!/.eslint*
+!/.eslintrc.js
+!/.formatter.exs
+!/.iex.exs
+!/.*ignore
+!/.prettier*
+!/.sobelow-conf
+!/.stylelint*
+!/.tool-versions

@@ -1,0 +1,11 @@
+{
+  "name": "assets",
+  "private": true,
+  "dependencies": {
+    "phoenix": "workspace:*",
+    "phoenix_html": "workspace:*",
+    "phoenix_live_view": "workspace:*",
+    "tailwindcss": "^3.4.14",
+    "topbar": "^3.0.0"
+  }
+}
