@@ -2,24 +2,21 @@ const plugin = require("tailwindcss/plugin")
 const fs = require("fs")
 const path = require("path")
 
+const brandReducer = (map, color) => {
+  map[`brand-${color}`] = `oklch(from var(--theme-brand-${color}) l c h / <alpha-value>)`
+  return map
+}
+
 module.exports = {
   content: ["./js/**/*.js", "../lib/playground_web.ex", "../lib/playground_web/**/*.*ex"],
   theme: {
     extend: {
-      colors: {
-        primary: "oklch(var(--theme-primary-lch))",
-        secondary: "oklch(var(--theme-secondary-lch))",
-      },
+      colors: ["primary", "secondary"].reduce(brandReducer, {}),
     },
   },
   plugins: [
-    //// require("@tailwindcss/forms"),
-    //
-    // Allows prefixing tailwind classes with LiveView classes to add rules
-    // only when LiveView classes are applied, for example:
-    //
-    //     <div class="phx-click-loading:animate-ping">
-    //
+    // require("@tailwindcss/forms"),
+
     plugin(({ addVariant }) =>
       addVariant("phx-click-loading", [".phx-click-loading&", ".phx-click-loading &"]),
     ),
@@ -30,9 +27,6 @@ module.exports = {
       addVariant("phx-change-loading", [".phx-change-loading&", ".phx-change-loading &"]),
     ),
 
-    // Embeds Heroicons (https://heroicons.com) into your app.css bundle
-    // See your `CoreComponents.icon/1` for more information.
-    //
     plugin(function ({ matchComponents, theme }) {
       let iconsDir = path.join(__dirname, "../deps/heroicons/optimized")
       let values = {}

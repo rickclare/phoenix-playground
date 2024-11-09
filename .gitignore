@@ -39,3 +39,4 @@ node_modules/
 
 .elixir-tools/
 .elixir_ls/
+.ruby-lsp/

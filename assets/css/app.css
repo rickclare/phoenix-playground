@@ -5,8 +5,13 @@
 
 @layer base {
   :root {
-    --theme-primary-lch: 67.46% 0.1414 261.344; /* CornflowerBlue */
-    --theme-secondary-lch: 67.79% 0.1382 0.68; /* PaleVioletRed */
+    --theme-brand-primary: oklch(60% 0.1414 261.344);
+    --theme-brand-secondary: oklch(60% 0.1382 0.68);
+  }
+
+  [data-theme="forest"] {
+    --theme-brand-primary: oklch(60% 0.1723 151.28);
+    --theme-brand-secondary: oklch(70% 0.2109 109.769);
   }
 }
 

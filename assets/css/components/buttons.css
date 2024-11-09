@@ -1,28 +1,26 @@
 @layer components {
   .btn {
-    @apply rounded-md p-2 text-white outline-offset-1 transition active:scale-95;
+    @apply rounded-md p-2 font-semibold text-white;
+    @apply outline-2 outline-offset-1;
+    @apply active:scale-95 motion-safe:transition-transform;
 
-    background-color: oklch(var(--btn-color) / var(--opacity, 1));
-    outline-color: color-mix(in oklab, oklch(var(--btn-color) / var(--opacity, 1)) 50%, white);
+    background-color: oklch(from var(--btn-color) l c h);
+    outline-color: oklch(from var(--btn-color) calc(l + ((1 - l) / 2)) c h);
 
     &:focus-visible {
-      @apply outline-2;
+      @apply outline;
     }
 
     &:hover {
-      background-color: color-mix(
-        in oklab,
-        oklch(var(--btn-color) / var(--opacity, 1)) 90%,
-        black
-      );
+      background-color: oklch(from var(--btn-color) calc(l - ((1 - l) / 4)) c h);
     }
   }
 
-  .btn-primary {
-    --btn-color: var(--theme-primary-lch);
+  .btn-brand-primary {
+    --btn-color: var(--theme-brand-primary);
   }
 
-  .btn-secondary {
-    --btn-color: var(--theme-secondary-lch);
+  .btn-brand-secondary {
+    --btn-color: var(--theme-brand-secondary);
   }
 }

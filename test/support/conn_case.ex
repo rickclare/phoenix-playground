@@ -19,15 +19,14 @@ defmodule PlaygroundWeb.ConnCase do
 
   using do
     quote do
+      use PlaygroundWeb, :verified_routes
+      import Phoenix.ConnTest
+      import PlaygroundWeb.ConnCase
+      import Plug.Conn
       # The default endpoint for testing
       @endpoint PlaygroundWeb.Endpoint
 
-      use PlaygroundWeb, :verified_routes
-
       # Import conveniences for testing with connections
-      import Plug.Conn
-      import Phoenix.ConnTest
-      import PlaygroundWeb.ConnCase
     end
   end
 
