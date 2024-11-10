@@ -7,11 +7,46 @@ const brandReducer = (map, color) => {
   return map
 }
 
+const mixColor = (color, pc, base) => `color-mix(in oklab, ${color} ${pc}%, ${base})`
+
+const mixColors = (color) => {
+  list = {}
+  list[500] = color
+  list[50] = mixColor(color, 20, "white")
+
+  for (let i = 1; i < 5; i++) {
+    list[i * 100] = mixColor(color, 20 + i * 15, "white")
+    list[(i + 5) * 100] = mixColor(color, 100 - i * 15, "black")
+  }
+
+  return list
+}
+
+const percentColors = (ch) => {
+  list = {}
+  list[95] = `oklch(95% ${ch})`
+
+  for (let i = 10; i < 100; i += 10) {
+    list[i] = `oklch(${i}% ${ch})`
+  }
+
+  return list
+}
+
+const brandColors = {
+  "brand-green-pc": percentColors("0.0929 222.19"),
+  "brand-green": mixColors("oklch(52.59% 0.0929 222.19)"),
+  "brand-red": mixColors("oklch(55.64% 0.2057 4.62)"),
+  "brand-blue": mixColors("oklch(57.19% 0.2367 275.39)"),
+}
+
+Object.assign(brandColors, ["primary", "secondary"].reduce(brandReducer, {}))
+
 module.exports = {
   content: ["./js/**/*.js", "../lib/playground_web.ex", "../lib/playground_web/**/*.*ex"],
   theme: {
     extend: {
-      colors: ["primary", "secondary"].reduce(brandReducer, {}),
+      colors: brandColors,
     },
   },
   plugins: [

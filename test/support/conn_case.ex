@@ -20,6 +20,7 @@ defmodule PlaygroundWeb.ConnCase do
   using do
     quote do
       use PlaygroundWeb, :verified_routes
+
       import Phoenix.ConnTest
       import PlaygroundWeb.ConnCase
       import Plug.Conn
