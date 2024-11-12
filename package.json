@@ -9,6 +9,7 @@
     "deps:update": "bun x --bun npm-check-updates@latest --interactive --root --format=group --packageManager=bun --install=always"
   },
   "devDependencies": {
+    "chroma-js": "^3.1.2",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.3.3",

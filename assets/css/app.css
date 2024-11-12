@@ -6,7 +6,7 @@
 @layer base {
   :root {
     --theme-brand-primary: oklch(60% 0.1414 261.344);
-    --theme-brand-secondary: oklch(60% 0.1382 0.68);
+    --theme-brand-secondary: oklch(78.76% 0.13 38.15deg);
   }
 
   [data-theme="forest"] {
