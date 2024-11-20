@@ -51,7 +51,7 @@ defmodule Playground.MixProject do
       {:bun, "~> 1.3", runtime: Mix.env() in [:dev, :e2e]},
       {:heroicons,
        github: "tailwindlabs/heroicons",
-       tag: "v2.1.5",
+       tag: "v2.2.0",
        sparse: "optimized",
        app: false,
        compile: false,
