@@ -7,12 +7,15 @@
 # General application configuration
 import Config
 
+# credo:disable-for-lines:2
 bun_version =
-  ".tool-versions"
-  |> File.stream!()
-  |> Stream.filter(fn line -> String.starts_with?(line, "bun ") end)
-  |> Enum.take(1)
-  |> then(fn [line] -> ~r/[\d\.]+/ |> Regex.run(line) |> hd() end)
+  case System.cmd("curl", ["-s", "https://api.github.com/repos/oven-sh/bun/releases/latest"]) do
+    {body, 0} ->
+      body |> :json.decode() |> Map.get("tag_name") |> String.replace("bun-v", "")
+
+    _ ->
+      "unknown"
+  end
 
 config :bun,
   version: bun_version,

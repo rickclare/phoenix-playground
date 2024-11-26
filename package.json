@@ -12,13 +12,13 @@
     "chroma-js": "^3.1.2",
     "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "prettier-plugin-toml": "^2.0.1",
     "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-prettier": "^5.0.2",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.15.0"
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0"
   }
 }
